@@ -66,7 +66,7 @@ The outputs of the workflow can be found under the ``results`` folder. When exec
 </p>
 
 * ``pheatmap.pdf``: Another exploratory data analysis step is to visualize corrections between samples in our dataset. The map shows some clear block structures of correlations between Leukemia samples and quite no correlation between Leukemia and normal cells. Also, sub-blocks in the map are related to sub-type of cells that are present in the data, such as B-cells and T-cells.
-* 
+
 <p align="center">
   <img width="700" height="550" src="figs/heatmap.png">
 </p>
@@ -75,7 +75,7 @@ The outputs of the workflow can be found under the ``results`` folder. When exec
 
 * ``downregulated.txt``: List of genes that statistically significantly down-expressed in Leukemia cells compared to normal cells.
 
-*  ``gene expression violin plot``: 
+*  ``gene expression violin plot``: Based on the input query from user on gene symbol, the workflow create a violin plot for the given gene showing the difference in expression of it in Leukemia and normal cells.
 
 <p align="center">
   <img width="700" height="550" src="results/gene_exprs.png">
