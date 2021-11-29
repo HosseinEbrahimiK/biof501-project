@@ -1,0 +1,8 @@
+
+			#!/bin/bash
+
+			read -p "Please enter the gene symbol: " gene
+			Rscript scripts/viz_difExprs.R $gene data/ExpressionSet.Rds results/upregulated.txt results/downregulated.txt
+
+			exit 0
+		

@@ -1,0 +1,27 @@
+{
+    "id": "90FF4DFA",
+    "path": "~/Desktop/UBC/Fall-2021/BIOINF-501A/biof501a-project/scripts/pre_process.R",
+    "project_path": "scripts/pre_process.R",
+    "type": "r_source",
+    "hash": "2912468982",
+    "contents": "",
+    "dirty": false,
+    "created": 1637136379498.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "7,2",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1637295515,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1637295515046,
+    "read_only": false,
+    "read_only_alternatives": []
+}
