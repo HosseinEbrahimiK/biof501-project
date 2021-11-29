@@ -29,7 +29,7 @@ exprs.viz <- function(gene, gxprs_file, amlUp_file, amlDown_file){
       #scale_fill_brewer(palette="RdBu") +
       labs(title=paste("plot of gene:", gene),x="phenotype", y = "gene expression") +
       ylab("gene expression") +
-      theme_minimal()
+      theme_bw()
     pdf(NULL)
     ggsave("results/gene_exprs.png", width = 7, height = 7)
     return(plot)
