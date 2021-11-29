@@ -42,12 +42,25 @@ conda activate biof-proj
 ```bash
 snakemake --cores 4 all
 ```
-During running this command, the pipeline asks you to select a gene to plot the violin plot. You are able to see list of up-regulated and down-regulated genes in the output ``.txt`` files and choose your gene of interest if it exists in differentially expressed genes.
+During running this command, the pipeline asks you to select a gene to plot the violin plot. You are able to see a list of up-regulated and down-regulated genes in the output ``.txt`` files and choose your gene of interest if it exists in differentially expressed genes.
 
 ---
 ### Input
 
-The input data is automatically downloaded with the ``GEOquery`` package in R. It consists of annotation data and the gene expression matrix, where the rows are cells and columns are genes. After finishing the download, the data will be saved in the data folder in ``.Rds`` format, named ``GSE48558_series_matrix``. After pre-processing data, including log2 transform if it is needed and median normalization, the data is ready for down-stream analysis. Also, note that the pre-processed data will also be available in data folder under ``ExpressionSet.Rds`` name.
+The input data is automatically downloaded with the ``GEOquery`` package in R. It consists of annotation data and the gene expression matrix, where the rows are cells and columns are genes. After the download, the data will be saved in the data folder in the ``.Rds`` format, named ``GSE48558_series_matrix``. After pre-processing data, including log2 transform, if needed, and median normalization, the data is ready for downstream analysis. Also, note that the pre-processed data will also be available in the data folder under the ``ExpressionSet.Rds`` name.
 
 ### Output
 
+The outputs of the workflow can be found under the ``results`` folder. When executing the pipeline, these results will be available after running ``visualization``, ``diff_exprs_analysis``, and ``diff_exprs_violin``. The major outputs and their description of this pipeline are:
+
+* ``boxplot.pdf``: To make sure that the data is normalized and pre-processed. The workflow creates a box plot where the samples are at the x-axis and gene expression level on the y-axis. Users can make sure of pre-process step by seeing if across samples the statistics are equal or not. As you can see from the below figure, the median and the upper and lower quantile of samples are similar.
+
+<p align="center">
+  <img width="800" height="400" src="figs/boxplot.png">
+</p>
+
+* ``PCA.pdf``: The workflow produces a visualization of data in 2d-dimension with the principal component analysis method. This plot allows users to see how data is distributed and see if there is a discrimination boundary by simply applying a linear transformation model.
+
+<p align="center">
+  <img width="800" height="400" src="figs/pca.png">
+</p>
