@@ -61,6 +61,10 @@ The input data is automatically downloaded by running the ``dataset`` script wit
 
 The outputs of the workflow can be found under the ``results`` folder. When executing the pipeline, these results will be available after running ``visualization``, ``identify_genes``, and ``diff_expression_visualize``. The major outputs and their description of this pipeline are:
 
+* ``upregulated.txt``: List of genes that statistically significantly up-expressed in Leukemia cells compared to normal cells. This output list is a part of the ``identify_genes`` module.
+
+* ``downregulated.txt``: List of genes that statistically significantly down-expressed in Leukemia cells compared to normal cells. This output list is a part of the ``identify_genes`` module.
+
 * ``boxplot.pdf``: To make sure that the data is normalized and pre-processed. The workflow creates a box plot where the samples are at the x-axis and gene expression level on the y-axis. Users can make sure of pre-process step by seeing if across samples the statistics are equal or not. As you can see from the below figure, the median and the upper and lower quantile of samples are similar. This output is a part of the `visualization` module.
 
 <p align="center">
@@ -78,10 +82,6 @@ The outputs of the workflow can be found under the ``results`` folder. When exec
 <p align="center">
   <img width="700" height="550" src="figs/heatmap.png">
 </p>
-
-* ``upregulated.txt``: List of genes that statistically significantly up-expressed in Leukemia cells compared to normal cells. This output list is a part of the ``identify_genes`` module.
-
-* ``downregulated.txt``: List of genes that statistically significantly down-expressed in Leukemia cells compared to normal cells. This output list is a part of the ``identify_genes`` module.
 
 * ``gene expression violin plot``: Based on the input query from the user (a gene symbol), the workflow creates a violin plot for the given gene showing the difference in expression of Leukemia and normal cells. This module only works when the specified gene has been listed in ``upregulated.txt`` or ``downregulated.txt``. Otherwise, it will throw an error indicating the input gene has not either been down or upregulated.
 
