@@ -35,7 +35,7 @@ rule visualization:
 		"scripts/viz.R"
 
 
-rule diff_exprs_analysis:
+rule identify_genes:
 	input:
 		exprs_data=rules.pre_process.output.clean_data
 	output:
@@ -48,8 +48,8 @@ rule diff_exprs_analysis:
 rule diff_exprs_violin:
 	input:
 		gene_exprs=rules.pre_process.output.clean_data,
-		aml_up=rules.diff_exprs_analysis.output.upregulated_genes,
-		aml_down=rules.diff_exprs_analysis.output.downegulated_genes
+		aml_up=rules.identify_genes.output.upregulated_genes,
+		aml_down=rules.identify_genes.output.downegulated_genes
 	output:
 		gene_exprs_viz="results/gene_exprs.png"
 	shell:
