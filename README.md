@@ -25,3 +25,16 @@ graphviz v2.40.1
 Libraries needed for R scripts are downloaded at the beginning of the ``dataset`` script.
 
 ### Usage
+1. Clone to this repository using the following command in terminal:
+```bash
+git clone https://github.com/HosseinEbrahimiK/biof501-project.git
+```
+2. Then, change you directory the project file using this command:
+```bash
+cd biof501-project
+```
+3. Create a ``conda`` environment with the provided ``.yaml`` file. **Note**: The following commands only work for Unix and MacOs systems. Make sure to have a virtual machine to run these commands in other systems.
+```bash
+conda env create --file environment.yml
+conda activate biof-proj
+```
