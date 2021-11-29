@@ -43,6 +43,7 @@ conda activate biof-proj
 snakemake --cores 4 all
 ```
 During running this command, the pipeline asks you to select a gene to plot the violin plot. You are able to see list of up-regulated and down-regulated genes in the output ``.txt`` files and choose your gene of interest if it exists in differentially expressed genes.
+
 ---
 ### Input
 
