@@ -29,13 +29,13 @@ Libraries needed for R scripts are downloaded at the beginning of the ``dataset`
 ```bash
 git clone https://github.com/HosseinEbrahimiK/biof501-project.git
 ```
-Then, change you directory the project file using this command:
+Then, change you directory to the project file using this command:
 ```bash
 cd biof501-project
 ```
 2. Create a ``conda`` environment with the provided ``.yaml`` file. **Note**: The following commands only work for Unix and MacOs systems. Make sure to have a virtual machine to run these commands in other systems.
 ```bash
-conda env create --file environment.yml
+conda env create --file environment.yaml
 conda activate biof-proj
 ```
 3. Run the pipeline with ``snakemake`` by executing the following code. You'll need to set the number of cores with the ``--cores`` argument. Usually, 2 - 4 cores would work well on most computers. This will create five output files in the results folder.
@@ -43,8 +43,7 @@ conda activate biof-proj
 snakemake --cores 4 all
 ```
 During running this command, the pipeline asks you to select a gene to plot the violin plot. You are able to see list of up-regulated and down-regulated genes in the output ``.txt`` files and choose your gene of interest if it exists in differentially expressed genes.
-
-4. When the pipeline has finished, compare your outputs with the files available in results directory.
-
 ---
 ### Input
+
+The input data is automatically downloaded with the ``GEOquery`` package in R. It consists of annotation data and the gene expression matrix, where the rows are cells and columns are genes. After finishing the download, the data will be saved in the data folder in ``.Rds`` format, named ``GSE48558_series_matrix``.
