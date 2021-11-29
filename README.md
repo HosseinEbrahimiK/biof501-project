@@ -3,7 +3,7 @@
 ## Background and Rationale
 Leukemia is a type of blood cancer usually takes place in the blood-forming tissue (e.g., bone marrow). The disease is characterized by the uncontrolled growth of blood cells, resulting in high numbers of abnormal and not fully developed cells called **blast** or leukemia cells. The exact causes of developing Leukemia are still unknown, but it is believed to be a combination of genetic and environmental factors. Different types of the disease are categorized by the type of white blood cells affected and how quickly the disease grows. In this project, we narrow our study to the most common type, Acute Myeloid Leukemia (AML). AML affects the myeloid cells, which develop into the various types of blood cells, and the word "acute" refers to its rapid progression.
 
-In this project, we designed a pipeline to analyze a microarray gene expression data of AML disease to identify genes in AML patients that are significantly up-regulated or down-regulated (differentially expressed) compared to genes in normal cells. By detecting these genes in AML patients, we would be able to study the pathways that these genes are involved. The data we used is based on [this study](https://pubmed.ncbi.nlm.nih.gov/23836560/) on AML, which is available in NCBI's Gene Expression Omnibus with **GSE48558** GEO accession.
+In this project, we designed a pipeline to analyze a microarray gene expression data of AML disease to identify genes in AML patients that are significantly up-regulated or down-regulated (differentially expressed) compared to genes in normal cells. By detecting these genes in AML patients, we would be able to study the pathways that these genes are involved. The data we used is based on [this study](https://pubmed.ncbi.nlm.nih.gov/23836560/) on AML, which is available in NCBI's Gene Expression Omnibus with [**GSE48558**](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48558) GEO accession.
 
 The steps of this pipeline are:
 1. Downloading the gene expression data and annotations using ``GEOquery`` package in R
@@ -46,4 +46,7 @@ During running this command, the pipeline asks you to select a gene to plot the 
 ---
 ### Input
 
-The input data is automatically downloaded with the ``GEOquery`` package in R. It consists of annotation data and the gene expression matrix, where the rows are cells and columns are genes. After finishing the download, the data will be saved in the data folder in ``.Rds`` format, named ``GSE48558_series_matrix``.
+The input data is automatically downloaded with the ``GEOquery`` package in R. It consists of annotation data and the gene expression matrix, where the rows are cells and columns are genes. After finishing the download, the data will be saved in the data folder in ``.Rds`` format, named ``GSE48558_series_matrix``. After pre-processing data, including log2 transform if it is needed and median normalization, the data is ready for down-stream analysis. Also, note that the pre-processed data will also be available in data folder under ``ExpressionSet.Rds`` name.
+
+### Output
+
