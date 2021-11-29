@@ -59,8 +59,24 @@ The outputs of the workflow can be found under the ``results`` folder. When exec
   <img width="800" height="400" src="figs/boxplot.png">
 </p>
 
-* ``PCA.pdf``: The workflow produces a visualization of data in 2d-dimension with the principal component analysis method. This plot allows users to see how data is distributed and see if there is a discrimination boundary by simply applying a linear transformation model.
+* ``PCA.pdf``: The workflow produces a visualization of data in 2d-dimension with the principal component analysis method. This plot allows users to see how data is distributed and see if there is a discrimination boundary by simply applying a linear transformation model. The plot shows that the two types of data points, normal and Leukemia, are somewhat localized in different parts of space. This suggests that some genes have been expressed very differently in these two groups.
 
 <p align="center">
-  <img width="800" height="400" src="figs/pca.png">
+  <img width="700" height="550" src="figs/PCA.png">
+</p>
+
+* ``pheatmap.pdf``: Another exploratory data analysis step is to visualize corrections between samples in our dataset. The map shows some clear block structures of correlations between Leukemia samples and quite no correlation between Leukemia and normal cells. Also, sub-blocks in the map are related to sub-type of cells that are present in the data, such as B-cells and T-cells.
+* 
+<p align="center">
+  <img width="700" height="550" src="figs/heatmap.png">
+</p>
+
+* ``upregulated.txt``: List of genes that statistically significantly up-expressed in Leukemia cells compared to normal cells.
+
+* ``downregulated.txt``: List of genes that statistically significantly down-expressed in Leukemia cells compared to normal cells.
+
+*  ``gene expression violin plot``: 
+
+<p align="center">
+  <img width="700" height="550" src="results/gene_exprs.png">
 </p>
