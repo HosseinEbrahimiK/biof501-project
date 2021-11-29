@@ -45,7 +45,7 @@ rule identify_genes:
 		"scripts/diffExprs.R"
 
 
-rule diff_exprs_violin:
+rule diff_expression_visualize:
 	input:
 		gene_exprs=rules.pre_process.output.clean_data,
 		aml_up=rules.identify_genes.output.upregulated_genes,
