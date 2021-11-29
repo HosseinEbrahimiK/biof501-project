@@ -38,8 +38,13 @@ cd biof501-project
 conda env create --file environment.yml
 conda activate biof-proj
 ```
-3. Run the pipeline with ``snakemake`` by executing the following code. You'll need to set the number of cores with the --cores argument. Usually, 2 - 4 cores would work well on most computers. This will create five output files in the results folder.
+3. Run the pipeline with ``snakemake`` by executing the following code. You'll need to set the number of cores with the ``--cores`` argument. Usually, 2 - 4 cores would work well on most computers. This will create five output files in the results folder.
 ```bash
 snakemake --cores 4 all
 ```
-During running this command, the pipeline asks you to select a gene to plot the violin plot. You are able to see list of up-regulated and down-regulated genes in the output ``.txt`` files and choose your gene of interest if it exists in differentially expressed genes. 
+During running this command, the pipeline asks you to select a gene to plot the violin plot. You are able to see list of up-regulated and down-regulated genes in the output ``.txt`` files and choose your gene of interest if it exists in differentially expressed genes.
+
+4. When the pipeline has finished, compare your outputs with the files available in results directory.
+
+---
+### Input
