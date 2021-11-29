@@ -53,29 +53,29 @@ The input data is automatically downloaded with the ``GEOquery`` package in R. I
 
 The outputs of the workflow can be found under the ``results`` folder. When executing the pipeline, these results will be available after running ``visualization``, ``diff_exprs_analysis``, and ``diff_exprs_violin``. The major outputs and their description of this pipeline are:
 
-* ``boxplot.pdf``: To make sure that the data is normalized and pre-processed. The workflow creates a box plot where the samples are at the x-axis and gene expression level on the y-axis. Users can make sure of pre-process step by seeing if across samples the statistics are equal or not. As you can see from the below figure, the median and the upper and lower quantile of samples are similar.
+* ``boxplot.pdf``: To make sure that the data is normalized and pre-processed. The workflow creates a box plot where the samples are at the x-axis and gene expression level on the y-axis. Users can make sure of pre-process step by seeing if across samples the statistics are equal or not. As you can see from the below figure, the median and the upper and lower quantile of samples are similar. This output is a part of `visualization` module.
 
 <p align="center">
   <img width="800" height="400" src="figs/boxplot.png">
 </p>
 
-* ``PCA.pdf``: The workflow produces a visualization of data in 2d-dimension with the principal component analysis method. This plot allows users to see how data is distributed and see if there is a discrimination boundary by simply applying a linear transformation model. The plot shows that the two types of data points, normal and Leukemia, are somewhat localized in different parts of space. This suggests that some genes have been expressed very differently in these two groups.
+* ``PCA.pdf``: The workflow produces a visualization of data in 2d-dimension with the principal component analysis (PCA) method. This plot allows users to see how data is distributed and see if there is a discrimination boundary in a lower dimension by simply applying a linear transformation model. The plot shows that the two types of data points, normal and Leukemia, are somewhat localized in different parts of PCs space. This suggests that some genes have been expressed very differently in these two groups. This output is a part of `visualization` module.
 
 <p align="center">
   <img width="700" height="550" src="figs/PCA.png">
 </p>
 
-* ``pheatmap.pdf``: Another exploratory data analysis step is to visualize corrections between samples in our dataset. The map shows some clear block structures of correlations between Leukemia samples and quite no correlation between Leukemia and normal cells. Also, sub-blocks in the map are related to sub-type of cells that are present in the data, such as B-cells and T-cells.
+* ``pheatmap.pdf``: Another exploratory data analysis step is to visualize corrections between samples in our dataset. The map shows some clear block structures of correlations between Leukemia samples and quite no correlation between Leukemia and normal cells. Also, sub-blocks in the map are related to sub-type of cells that are present in the data but not in our analysis, such as B-cells and T-cells. This plot is a part of `visualization` module.
 
 <p align="center">
   <img width="700" height="550" src="figs/heatmap.png">
 </p>
 
-* ``upregulated.txt``: List of genes that statistically significantly up-expressed in Leukemia cells compared to normal cells.
+* ``upregulated.txt``: List of genes that statistically significantly up-expressed in Leukemia cells compared to normal cells. This output list is a part of `diff_exprs_analysis` module.
 
-* ``downregulated.txt``: List of genes that statistically significantly down-expressed in Leukemia cells compared to normal cells.
+* ``downregulated.txt``: List of genes that statistically significantly down-expressed in Leukemia cells compared to normal cells. This output list is a part of `diff_exprs_analysis` module.
 
-*  ``gene expression violin plot``: Based on the input query from user on gene symbol, the workflow create a violin plot for the given gene showing the difference in expression of it in Leukemia and normal cells.
+*  ``gene expression violin plot``: Based on the input query from user on gene symbol, the workflow creates a violin plot for the given gene showing the difference in expression of in Leukemia and normal cells. This module only works when the specified gene has been listed in ``upregulated.txt`` or ``downregulated.txt``. Otherwise, it will throw an error indicating the input gene has not either down or up regulated.
 
 <p align="center">
   <img width="700" height="550" src="results/gene_exprs.png">
